@@ -19,14 +19,17 @@ class MainActivity : AppCompatActivity() {
         buttonHelloWorld.setOnClickListener{ showMessage() }
 
         val buttonReset: Button=findViewById(R.id.buttonReset)
-        buttonReset.setOnClickListener { showMessage() }
+        buttonReset.setOnClickListener { resetMessage() }
+    }
+
+    private fun resetMessage() {
+        val textViewMessage: TextView = findViewById(R.id.textViewMessage)
+        textViewMessage.setText(getString(R.string.hello_world))
+
     }
 
     private fun showMessage() {
     val textViewMessage: TextView = findViewById(R.id.textViewMessage)
         textViewMessage.setText("Hello 123")
-
-        //reset
-        textViewMessage.setText(getString(R.string.press_me))
     }
 }
